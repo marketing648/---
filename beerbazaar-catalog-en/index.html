@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--orange:#F5830A;--orange-dim:rgba(245,131,10,0.12);--orange-border:rgba(245,131,10,0.3);--black:#0f0f0f;--card:#181818;--card2:#1e1e1e;--white:#ffffff;--gray:rgba(255,255,255,0.78);--nav-h:52px;}
+:root{--orange:#F5830A;--orange-dim:rgba(245,131,10,0.12);--orange-border:rgba(245,131,10,0.3);--black:#0f0f0f;--card:#181818;--card2:#1e1e1e;--white:#ffffff;--gray:#ffffff;--nav-h:52px;}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:"Heebo",sans-serif;direction:rtl;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
@@ -23,7 +23,7 @@ body{background:var(--black);color:var(--white);font-family:"Heebo",sans-serif;d
 .hero-tagline{font-size:11px;font-weight:700;color:var(--orange);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
 .hero-title{font-size:clamp(26px,8vw,36px);font-weight:900;line-height:1.15;margin-bottom:12px;}
 .hero-title em{font-style:normal;color:var(--orange);}
-.hero-sub{font-size:14px;font-weight:400;color:var(--gray);margin-bottom:22px;line-height:1.6;}
+.hero-sub{font-size:14px;font-weight:400;color:rgba(255,255,255,0.78);margin-bottom:22px;line-height:1.6;}
 .badges{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;}
 .badge{background:var(--orange-dim);border:1px solid var(--orange-border);color:var(--orange);font-size:11px;font-weight:700;padding:5px 11px;border-radius:4px;white-space:nowrap;}
 .vid-wrap{position:relative;width:100%;background:#000;}
@@ -33,7 +33,7 @@ body{background:var(--black);color:var(--white);font-family:"Heebo",sans-serif;d
 .sec-header{padding:28px 16px 0;margin-bottom:14px;}
 .sec-location{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--black);font-size:12px;font-weight:900;padding:7px 14px;border-radius:6px;margin-bottom:10px;}
 .sec-title{font-size:clamp(18px,5vw,24px);font-weight:900;line-height:1.2;margin-bottom:6px;}
-.sec-sub{font-size:12px;color:var(--gray);font-weight:300;line-height:1.7;}
+.sec-sub{font-size:13px;color:#ffffff;font-weight:400;line-height:1.7;}
 .sec-divider{height:1px;background:linear-gradient(to left,transparent,rgba(245,131,10,.25),transparent);margin:0 16px 16px;}
 .sep-banner{margin:24px 10px;padding:18px 16px;background:var(--card2);border:1px solid var(--orange-border);border-radius:12px;text-align:center;}
 .sep-banner-text{font-size:clamp(13px,4vw,16px);font-weight:900;color:var(--white);line-height:1.6;}
@@ -46,15 +46,15 @@ body{background:var(--black);color:var(--white);font-family:"Heebo",sans-serif;d
 .card-img img{width:100%;height:100%;object-fit:cover;display:block;}
 .card-body{padding:10px 10px 12px;}
 .card-name{font-size:12px;font-weight:900;line-height:1.3;margin-bottom:5px;}
-.card-desc{font-size:10px;font-weight:300;color:var(--gray);line-height:1.55;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.card-desc{font-size:12px;font-weight:400;color:#ffffff;line-height:1.55;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .meta{display:flex;gap:4px;flex-wrap:wrap;}
 .pill{background:var(--orange-dim);color:var(--orange);font-size:9px;font-weight:700;padding:3px 6px;border-radius:3px;white-space:nowrap;}
 .packages{padding:0 10px;display:flex;flex-direction:column;gap:8px;margin-top:10px;}
 .pkg-card{background:var(--card2);border:1px solid var(--orange-border);border-radius:10px;padding:14px 16px;}
 .pkg-name{font-size:14px;font-weight:900;color:var(--orange);margin-bottom:6px;}
-.pkg-desc{font-size:11px;font-weight:300;color:var(--gray);line-height:1.8;white-space:pre-line;}
+.pkg-desc{font-size:12px;font-weight:400;color:#ffffff;line-height:1.8;white-space:pre-line;}
 .pkg-meta{display:flex;gap:5px;margin-top:10px;flex-wrap:wrap;}
-.sec-label-sm{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--orange);text-transform:uppercase;padding:16px 10px 6px;}
+.sec-label-sm{font-size:12px;font-weight:900;color:var(--orange);padding:16px 10px 6px;}
 .food-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 10px;}
 .food-card{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:3/2;border:1px solid rgba(255,255,255,.05);background:var(--card);display:flex;align-items:flex-end;}
 .food-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
@@ -68,11 +68,11 @@ body{background:var(--black);color:var(--white);font-family:"Heebo",sans-serif;d
 .faq-q-text{font-size:14px;font-weight:700;line-height:1.5;flex:1;}
 .faq-icon{color:var(--orange);font-size:20px;font-weight:900;flex-shrink:0;transition:transform .3s;margin-top:2px;}
 .faq-item.open .faq-icon{transform:rotate(45deg);}
-.faq-a{font-size:13px;font-weight:300;color:var(--gray);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;}
+.faq-a{font-size:13px;font-weight:400;color:#ffffff;line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;}
 .faq-item.open .faq-a{max-height:400px;padding-top:12px;}
 .cta-section{padding:28px 16px 8px;text-align:center;}
 .cta-title{font-size:clamp(18px,5vw,24px);font-weight:900;margin-bottom:8px;line-height:1.3;}
-.cta-sub{font-size:13px;color:var(--gray);margin-bottom:22px;font-weight:300;}
+.cta-sub{font-size:13px;color:rgba(255,255,255,0.78);margin-bottom:22px;font-weight:300;}
 .cta-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .cta-btn{display:flex;align-items:center;justify-content:center;gap:7px;padding:18px 12px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;font-family:"Heebo",sans-serif;border:none;cursor:pointer;min-height:56px;}
 .cta-btn:active{transform:scale(.97);}
@@ -130,23 +130,47 @@ footer{background:#0a0a0a;border-top:1px solid rgba(245,131,10,0.2);padding:28px
   </div>
   <div class="sec-divider"></div>
   <div class="grid">
+
     <div class="card fi"><div class="card-img"><img src="images/odtvip.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">למי קראת דודהש'ך</div><div class="card-desc">פעילות גיבוש ODT ברמת VIP עם משחקי חשיבה ענקיים ביער בן שמן + ארוחת צהריים + הכרות עם עולם הבירה/חתול שמן</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 20–250</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/beer_show.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">הכרות עם עולם הבירה + ארוחה</div><div class="card-desc">מופע הומוריסטי עם 12 סוגי בירות מהחבית + ארוחת צהריים</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 20+</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/fat_cat.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חתול שמן + ארוחה</div><div class="card-desc">כל שולחן מבשל בירה בעצמו — סדנת הבישול המובילה בישראל</div><div class="meta"><span class="pill">⏱ 3 שע'</span><span class="pill">👥 20+</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/nav_forest.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">ניווט משימות ביער</div><div class="card-desc">מחפשים את הדודה — ניווט סלולרי + ארוחה + סדנת בירה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 35–400</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/jeep.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">טיול ג'יפים</div><div class="card-desc">שיירת ג'יפים ביער עם נקודות תצפית ומשימות — אקסטרים בקטנה</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 14–400</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/beerton.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">בירתון</div><div class="card-desc">תחרויות ומשימות אוקטוברפסט בין השולחנות — ODT מגבש ומצחיק</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 25–80</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/motor.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">כלים מוטוריים</div><div class="card-desc">איזי ראידרים ורנג'רים בנהיגה עצמית בדרכי עפר ביער בן שמן</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 עד 60</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/paint_kfar.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת ציור הנסיך הקטן</div><div class="card-desc">כל משתתף יוצר ציור קנבאס משלו — יוצאים עם יצירה הביתה</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 25+</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/beerchef.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">Beer Chef Challenge 🍻🔥</div><div class="card-desc">מבשלים אוכל עם בירה ומתחרים — מסטר שף פוגש מבשלת בירה</div><div class="meta"><span class="pill">⏱ 3.5–4 שע'</span><span class="pill">👥 65+</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/heroes.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">יום תרומה לגיבורי על</div><div class="card-desc">יום חוויתי ומשמעותי — מתחיל בחווה חקלאית וממשיך במבשלה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/poker.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת בלקג'ק</div><div class="card-desc">פוקר, קלפים ואסטרטגיה — חוויה מלאה ומשחק חברתי מלא אדרנלין</div><div class="meta"><span class="pill">⏱ 3–5 שע'</span><span class="pill">👥 50–90</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/coffee.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת קפה מקצועית</div><div class="card-desc">חוויה יוקרתית עם הקפה הטוב בישראל — קאפינג, זנים וסודות הקלייה</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/wood.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת הכנת מוצרים מעץ</div><div class="card-desc">שרפרפים, מדפים, מארזי בירה — יוצרים ביחד ולוקחים הביתה</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–180</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/frayer.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">למי קראת פראייר</div><div class="card-desc">עסקאות סיבוביות, דילים סודיים ומשא ומתן — תחרות אסטרטגית</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 40–180</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/music.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">מופעים מוזיקליים</div><div class="card-desc">יאסו — מופע יווני ישראלי, מעגל מתופפים, מוסיקת עולם ועוד</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/race.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">המרוץ למיליארד פחיות 🔥</div><div class="card-desc">מגה פרמיום — ג'יפים, משימות, ניווט, סדנאות ואוכל ביום אחד</div><div class="meta"><span class="pill">⏱ 4–7 שע'</span><span class="pill">👥 35–200</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/pool.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">The BeerBazaar Pool Party 🏊</div><div class="card-desc">יום כיף משולב בריכה ומגוון פעילויות בהתאמה אישית</div><div class="meta"><span class="pill">⏱ משתנה</span><span class="pill">👥 100–300</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/beer_show.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">הכרות עם עולם הבירה + ארוחה</div><div class="card-desc">מופע הומוריסטי עם 12 סוגי בירות מהחבית + ארוחת צהריים</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 20-80</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/fat_cat.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת בישול בירה "חתול שמן" + ארוחה</div><div class="card-desc">כל שולחן מבשל בירה בעצמו — סדנת הבישול המובילה בישראל</div><div class="meta"><span class="pill">⏱ 3 שע'</span><span class="pill">👥 20-80</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/nav_forest.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">משחק ניווט משימות ביער</div><div class="card-desc">מחפשים את הדודה — ניווט סלולרי + ארוחה + סדנת בירה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 35–400</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/jeep.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">טיול ג'יפים</div><div class="card-desc">שיירת ג'יפים ביער עם נקודות תצפית, אקסטרים בקטנה או שדרוג לטיול + פעילות ODT בזמן הנסיעה</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 14–400</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/beerton.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">בירתון</div><div class="card-desc">תחרויות ומשימות אוקטוברפסט בין השולחנות — ODT מגבש ומצחיק</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 25–80</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/motor.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">כלים מוטוריים</div><div class="card-desc">איזי ראידרים ורנג'רים בנהיגה עצמית בדרכי עפר ביער בן שמן</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 עד 60</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/paint_kfar.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת ציור הנסיך הקטן</div><div class="card-desc">כל משתתף יוצר ציור קנבאס משלו — יוצאים עם יצירה הביתה</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 20-150</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/beerchef.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">Beer Chef Challenge 🍻🔥</div><div class="card-desc">מה קורה שמסטר שף פוגש מבשלת בירה? מבשלים אוכל עם בירה ומתחרים!</div><div class="meta"><span class="pill">⏱ 3.5–4 שע'</span><span class="pill">👥 65+</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/heroes.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">יום תרומה לגיבורי על</div><div class="card-desc">יום חוויתי ומשמעותי — מתחיל בחווה חקלאית וממשיך במבשלה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/poker.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת בלקג'ק</div><div class="card-desc">פוקר, קלפים ואסטרטגיה — חוויה מלאה ומשחק חברתי מלא אדרנלין</div><div class="meta"><span class="pill">⏱ 3–5 שע'</span><span class="pill">👥 50–90</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/coffee.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת קפה מקצועית</div><div class="card-desc">חוויה יוקרתית עם הקפה הטוב בישראל — קאפינג, זנים וסודות הקלייה</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/wood.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת הכנת מוצרים מעץ</div><div class="card-desc">שרפרפים, מדפים, מארזי בירה — יוצרים ביחד ולוקחים הביתה</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–180</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/frayer.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">למי קראת פראייר</div><div class="card-desc">עסקאות סיבוביות, דילים סודיים ומשא ומתן — תחרות אסטרטגית</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 40–180</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/music.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">מופעים מוזיקליים</div><div class="card-desc">יאסו — מופע יווני ישראלי, מעגל מתופפים, מוסיקת עולם, בלוז, רוק ועוד</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/race.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">המרוץ למיליארד פחיות 🔥</div><div class="card-desc">מגה פרמיום — ג'יפים, משימות, ניווט, סדנאות ואוכל והכל ביום אחד</div><div class="meta"><span class="pill">⏱ 4–7 שע'</span><span class="pill">👥 35–200</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/pool.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">The BeerBazaar Pool Party 🏊</div><div class="card-desc">יום כיף משולב בריכה ומגוון פעילויות בהתאמה אישית</div><div class="meta"><span class="pill">⏱ 4–7 שע'</span><span class="pill">👥 100–300</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/extreme.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">BeerBazaar Extreme</div><div class="card-desc">מגוון פעילויות אקסטרים ביום הגיבוש: סנפלניג, בירטאג, פארק חבלים בגובה ועוד</div><div class="meta"><span class="pill">⏱ 3+ שע'</span><span class="pill">👥 25–400</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/bar_free.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חופשי על בר</div><div class="card-desc">בירה ואוכל ללא הגבלה ואפשרות לשלב מופע הכרות עם עולם הבירה או חתול שמן</div><div class="meta"><span class="pill">⏱ 1.5+ שע'</span><span class="pill">👥 15–180</span></div></div></div>
+
+    <div class="card fi"><div class="card-img"><img src="images/maccabim.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">אחרון המכבים</div><div class="card-desc">משחק משימות ברכבים פרטיים בחבל מודיעין — טעימות, חוות, מושבה, גבן ובירה</div><div class="meta"><span class="pill">⏱ 4–6 שע'</span><span class="pill">👥 25–300</span></div></div></div>
+
   </div>
 
   <div class="vid-wrap fi" style="margin-top:16px;">
@@ -154,7 +178,7 @@ footer{background:#0a0a0a;border-top:1px solid rgba(245,131,10,0.2);padding:28px
     <button class="vid-sound" onclick="toggleSound(this)">🔇</button>
   </div>
 
-  <div class="sec-label-sm">🎁 חבילות לדוגמה</div>
+  <div class="sec-label-sm">🎁 חבילות לדוגמה - אבל יש עוד הרבה אפשרויות נוספות</div>
   <div class="packages">
     <div class="pkg-card fi">
       <div class="pkg-name">חבילת גלאגר</div>
@@ -164,7 +188,7 @@ footer{background:#0a0a0a;border-top:1px solid rgba(245,131,10,0.2);padding:28px
 12:45 חצי עושים הכרות עם עולם הבירה וחצי עושים סדנת בירתון ומתחלפים
 15:00 ארוחת צהריים שולחן שוק VIP או מלך הבסטה
 15:30 סיום משוער ונסיעה הביתה עם אפשרות למארז מתנה</div>
-      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 45–160</span></div>
+      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 35–160</span></div>
     </div>
     <div class="pkg-card fi">
       <div class="pkg-name">חבילת ויטני</div>
@@ -173,7 +197,7 @@ footer{background:#0a0a0a;border-top:1px solid rgba(245,131,10,0.2);padding:28px
 12:30 שולחן שוק VIP
 13:30 חצי עושים סדנת בירתון וחצי עושים טיול ג'יפים של שעה
 15:30 סיום משוער ונסיעה הביתה עם אפשרות למארז מתנה</div>
-      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 45–160</span></div>
+      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 35–160</span></div>
     </div>
     <div class="pkg-card fi">
       <div class="pkg-name">חבילת שאגת החתול</div>
@@ -183,7 +207,7 @@ footer{background:#0a0a0a;border-top:1px solid rgba(245,131,10,0.2);padding:28px
 13:00 חצי עושים סדנת בירתון וחצי עושים הכרות עם עולם הבירה
 15:00 ארוחת שולחן שוק VIP
 16:00 סיום משוער ונסיעה הביתה עם אפשרות למארז מתנה</div>
-      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 45–160</span></div>
+      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 35–160</span></div>
     </div>
   </div>
 </section>
@@ -200,14 +224,14 @@ footer{background:#0a0a0a;border-top:1px solid rgba(245,131,10,0.2);padding:28px
   </div>
   <div class="sec-divider"></div>
   <div class="grid">
-    <div class="card fi"><div class="card-img"><img src="images/tlv_tour.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">מטיילים עם הדודה</div><div class="card-desc">סיור קולינרי ותרבותי בכרם התימנים ושוק הכרמל + טעימות בירה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/tlv_taste.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">טעימות בירה מוגזמות</div><div class="card-desc">מופע הומוריסטי הכרות עם עולם הבירה ובירה חופשית בלב השוק</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/tlv_fatcat.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חתול שמן בשוק</div><div class="card-desc">סדנת בישול בירה — גם בסניף שוק הכרמל</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 10–20</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/tlv_bar.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חופשי על הבר</div><div class="card-desc">פיצות, ניגובים, בירה ללא הגבלה — אווירת שוק אותנטית</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/tlv_dance.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">רוקדים עם הדודה</div><div class="card-desc">סדנת אוזניות עם קצב מודרך + טעימות בירה מוגזמות</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 25+</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/tlv_photo.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">זיגי צלם אותי</div><div class="card-desc">סדנת צילום סלולרי מודרכת עם משימות יצירתיות והמון הומור</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 15–30</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/tlv_paint.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">ציור הנסיך הקטן בשוק</div><div class="card-desc">סדנת ציור קנבאס באווירת שוק — פיצות ובירה בצד</div><div class="meta"><span class="pill">⏱ 2–2.5 שע'</span><span class="pill">👥 10–30</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
-    <div class="card fi"><div class="card-img"><img src="images/tlv_culinary.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סיור קולינרי</div><div class="card-desc">חיפה, נתניה, תל אביב, ירושלים, רמלה — סיור עם מדריך</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_tour.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">מטיילים עם הדודה</div><div class="card-desc">סיור קולינרי ותרבותי בכרם התימנים ושוק הכרמל + טעימות בירה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_taste.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">טעימות בירה מוגזמות</div><div class="card-desc">מופע הומוריסטי הכרות עם עולם הבירה ובירה חופשית בלב השוק</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_fatcat.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חתול שמן בשוק</div><div class="card-desc">סדנת בישול בירה — גם בסניף שוק הכרמל</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 10–20</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_bar.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חופשי על הבר</div><div class="card-desc">פיצות, ניגובים, בירה ללא הגבלה — אווירת שוק אותנטית</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_dance.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">רוקדים עם הדודה</div><div class="card-desc">סדנת אוזניות עם קצב מודרך + טעימות בירה מוגזמות</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 25+</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_photo.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">זיגי צלם אותי</div><div class="card-desc">סדנת צילום סלולרי מודרכת עם משימות יצירתיות והמון הומור</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 15–30</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_paint.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת ציור הנסיך הקטן בשוק</div><div class="card-desc">סדנת ציור קנבאס באווירת שוק — פיצות ובירה בצד</div><div class="meta"><span class="pill">⏱ 2–2.5 שע'</span><span class="pill">👥 10–30</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_culinary.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סיור קולינרי</div><div class="card-desc">חיפה, נתניה, תל אביב, ירושלים, רמלה — סיור עם מדריך</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן יותר בסבבים</span></div></div></div>
   </div>
 </section>
 
@@ -252,11 +276,11 @@ footer{background:#0a0a0a;border-top:1px solid rgba(245,131,10,0.2);padding:28px
   <h2 class="faq-title">אולי שאלת את עצמך? 🤔</h2>
   <div class="faq-list">
     <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">אנחנו קבוצה גדולה – 200+ איש, אפשר?</span><span class="faq-icon">+</span></div><div class="faq-a">בהחלט! אנחנו עובדים עם קבוצות של 15 עד 400 אנשים. יש לנו 2 מרחבים מרווחים בחוץ ובפנים, פתרונות לגיבוש עם ריבוי פעילויות במקביל.</div></div>
-    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">יש בצוות שלנו אנשים שומרי כשרות, טבעונים וצליאק?</span><span class="faq-icon">+</span></div><div class="faq-a">כן! אנחנו מתאימים לכולם. פתרונות לטבעונים, צמחונים, צליאק, כשרות מהודרת. ואפילו מוצרים ללא אלכוהול לגברים בהריון.</div></div>
-    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">מה קורה אם מזג האוויר לא טוב?</span><span class="faq-icon">+</span></div><div class="faq-a">אין בעיה! יש לנו מרחבים מקורים גדולים ומאובזרים. בין אם בפנים או בחוץ, יש לנו פתרונות לכל מזג אוויר. מרחב מוגן במקום!</div></div>
-    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">כמה זמן לוקח לארגן?</span><span class="faq-icon">+</span></div><div class="faq-a">השאירו פרטים ותוך שעתיים הצעה מלאה אצלכם. אנחנו מכינים הכל כדי שאתם לא תצטרכו לדאוג לשום פרט.</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">יש בצוות שלנו אנשים שומרי כשרות, טבעונים וצליאק?</span><span class="faq-icon">+</span></div><div class="faq-a">כן! אנחנו מתאימים לכולם. פתרונות לטבעונים, צמחונים, צליאק, כשרות רגילה ומהודרת. ואפילו מוצרים ללא אלכוהול לגברים בהריון.</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">מה קורה אם מזג האוויר לא טוב?</span><span class="faq-icon">+</span></div><div class="faq-a">אין בעיה! יש לנו מרחב מוגן במקום! בין אם בפנים או בחוץ, יש לנו פתרונות לכל מזג אוויר.</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">כמה זמן לוקח לארגן?</span><span class="faq-icon">+</span></div><div class="faq-a">ניתן לארגן אירוע מהיום למחר אבל הכי נכון לתכנן אותו מוקדם ככל האפשר. אנחנו דואגים לכל כדי שאתם לא תצטרכו לדאוג לשום פרט.</div></div>
     <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">אנחנו חברה עם מגוון רצונות — האם יש מענה לכולם?</span><span class="faq-icon">+</span></div><div class="faq-a">כן! מגוון רב של פעילויות — מסדנאות בירה, ODT ביער, ג'יפים, ציור, סדנאות קולינריות ועוד. הכל אפשר לשלב ולהתאים לצוות שלכם.</div></div>
-    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">זה רק כפר דניאל או שיכולים לבוא אלינו?</span><span class="faq-icon">+</span></div><div class="faq-a">יש לנו בירבזאר אורבני בתל אביב ועוד ערים. בנוסף אנחנו גם באים אליכם לכל מקום — ואפילו להפקות אירועים גדולות בכל רחבי הארץ.</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">זה רק כפר דניאל או שיכולים לבוא אלינו?</span><span class="faq-icon">+</span></div><div class="faq-a">יש לנו בירבזאר אורבני בתל אביב ובנוסף אנחנו גם באים אליכם לכל מקום — ואפילו להפיק אירועים וימי גיבוש בכל רחבי הארץ אבל הכי טוב בכפר דניאל ויער בן שמן.</div></div>
   </div>
 </section>
 
