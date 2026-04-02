@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>BeerBazaar – קטלוג פעילויות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#F5830A;--orange-dim:rgba(245,131,10,0.12);--orange-border:rgba(245,131,10,0.3);--black:#0f0f0f;--card:#181818;--card2:#1e1e1e;--white:#ffffff;--gray:rgba(255,255,255,0.78);--nav-h:52px;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:"Heebo",sans-serif;direction:rtl;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.nav{position:fixed;top:0;right:0;left:0;z-index:100;height:var(--nav-h);background:rgba(15,15,15,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,131,10,0.2);display:flex;align-items:center;padding:0 6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:12px;font-weight:700;padding:0 10px;height:var(--nav-h);display:flex;align-items:center;gap:4px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;flex-shrink:0;}
+.nav a:hover,.nav a.active{color:var(--orange);border-bottom-color:var(--orange);}
+.nav a.cta-nav{background:var(--orange);color:var(--black)!important;border-radius:6px;margin-right:6px;padding:0 12px;height:34px;border-bottom:none;}
+.nav-sep{color:rgba(255,255,255,0.15);font-size:10px;flex-shrink:0;}
+.hero{padding-top:calc(var(--nav-h) + 36px);padding-bottom:36px;padding-right:20px;padding-left:20px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(245,131,10,.18) 0%,transparent 68%);pointer-events:none;}
+.hero-logo{width:min(220px,70vw);margin:0 auto 20px;display:block;border-radius:8px;}
+.hero-tagline{font-size:11px;font-weight:700;color:var(--orange);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.hero-title{font-size:clamp(26px,8vw,36px);font-weight:900;line-height:1.15;margin-bottom:12px;}
+.hero-title em{font-style:normal;color:var(--orange);}
+.hero-sub{font-size:14px;font-weight:400;color:var(--gray);margin-bottom:22px;line-height:1.6;}
+.badges{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;}
+.badge{background:var(--orange-dim);border:1px solid var(--orange-border);color:var(--orange);font-size:11px;font-weight:700;padding:5px 11px;border-radius:4px;white-space:nowrap;}
+.vid-wrap{position:relative;width:100%;background:#000;}
+.vid-wrap video{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#000;}
+.vid-sound{position:absolute;bottom:12px;left:12px;background:rgba(0,0,0,0.65);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:18px;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.section{padding:0 0 32px;}
+.sec-header{padding:28px 16px 0;margin-bottom:14px;}
+.sec-location{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--black);font-size:12px;font-weight:900;padding:7px 14px;border-radius:6px;margin-bottom:10px;}
+.sec-title{font-size:clamp(18px,5vw,24px);font-weight:900;line-height:1.2;margin-bottom:6px;}
+.sec-sub{font-size:12px;color:var(--gray);font-weight:300;line-height:1.7;}
+.sec-divider{height:1px;background:linear-gradient(to left,transparent,rgba(245,131,10,.25),transparent);margin:0 16px 16px;}
+.sep-banner{margin:24px 10px;padding:18px 16px;background:var(--card2);border:1px solid var(--orange-border);border-radius:12px;text-align:center;}
+.sep-banner-text{font-size:clamp(13px,4vw,16px);font-weight:900;color:var(--white);line-height:1.6;}
+.sep-banner-text span{color:var(--orange);}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 10px;}
+.card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.05);position:relative;}
+.card::after{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--orange);opacity:0;transition:opacity .2s;}
+.card:active::after{opacity:1;}
+.card-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:#222;}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.card-body{padding:10px 10px 12px;}
+.card-name{font-size:12px;font-weight:900;line-height:1.3;margin-bottom:5px;}
+.card-desc{font-size:10px;font-weight:300;color:var(--gray);line-height:1.55;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.meta{display:flex;gap:4px;flex-wrap:wrap;}
+.pill{background:var(--orange-dim);color:var(--orange);font-size:9px;font-weight:700;padding:3px 6px;border-radius:3px;white-space:nowrap;}
+.packages{padding:0 10px;display:flex;flex-direction:column;gap:8px;margin-top:10px;}
+.pkg-card{background:var(--card2);border:1px solid var(--orange-border);border-radius:10px;padding:14px 16px;}
+.pkg-name{font-size:14px;font-weight:900;color:var(--orange);margin-bottom:6px;}
+.pkg-desc{font-size:11px;font-weight:300;color:var(--gray);line-height:1.8;white-space:pre-line;}
+.pkg-meta{display:flex;gap:5px;margin-top:10px;flex-wrap:wrap;}
+.sec-label-sm{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--orange);text-transform:uppercase;padding:16px 10px 6px;}
+.food-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 10px;}
+.food-card{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:3/2;border:1px solid rgba(255,255,255,.05);background:var(--card);display:flex;align-items:flex-end;}
+.food-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.food-overlay{position:relative;z-index:1;width:100%;padding:8px 10px 10px;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,transparent 100%);}
+.food-name{font-size:12px;font-weight:900;line-height:1.3;}
+.food-sub{font-size:9px;color:var(--orange);font-weight:700;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.faq-section{padding:32px 16px;}
+.faq-title{font-size:clamp(20px,5vw,26px);font-weight:900;text-align:center;margin-bottom:20px;}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.08);padding:16px 0;cursor:pointer;}
+.faq-q{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.faq-q-text{font-size:14px;font-weight:700;line-height:1.5;flex:1;}
+.faq-icon{color:var(--orange);font-size:20px;font-weight:900;flex-shrink:0;transition:transform .3s;margin-top:2px;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{font-size:13px;font-weight:300;color:var(--gray);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:400px;padding-top:12px;}
+.cta-section{padding:28px 16px 8px;text-align:center;}
+.cta-title{font-size:clamp(18px,5vw,24px);font-weight:900;margin-bottom:8px;line-height:1.3;}
+.cta-sub{font-size:13px;color:var(--gray);margin-bottom:22px;font-weight:300;}
+.cta-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.cta-btn{display:flex;align-items:center;justify-content:center;gap:7px;padding:18px 12px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;font-family:"Heebo",sans-serif;border:none;cursor:pointer;min-height:56px;}
+.cta-btn:active{transform:scale(.97);}
+.cta-wa{background:#25D366;color:#fff;grid-column:1/-1;font-size:16px;}
+.cta-tel{background:var(--orange);color:var(--black);}
+.cta-mail{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.12);}
+footer{background:#0a0a0a;border-top:1px solid rgba(245,131,10,0.2);padding:28px 16px 50px;text-align:center;}
+.footer-logo{width:70px;margin:0 auto 14px;display:block;border-radius:8px;}
+.footer-main{font-size:14px;font-weight:700;color:var(--orange);margin-bottom:6px;}
+.footer-row{font-size:12px;color:rgba(255,255,255,.4);line-height:2;}
+.footer-row a{color:rgba(255,255,255,.4);text-decoration:none;}
+.footer-access{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:rgba(255,255,255,.25);line-height:2;}
+.footer-access a{color:rgba(255,255,255,.25);text-decoration:none;}
+.footer-copy{margin-top:12px;font-size:11px;color:rgba(255,255,255,.2);}
+.fi{opacity:0;transform:translateY(14px);transition:opacity .4s ease,transform .4s ease;}
+.fi.v{opacity:1;transform:none;}
+@media(max-width:380px){.hero-title{font-size:24px;}.nav a{font-size:11px;padding:0 8px;}.card-name{font-size:11px;}.badge{font-size:10px;padding:4px 8px;}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="#kfar">🏭 כפר דניאל</a><span class="nav-sep">|</span>
+  <a href="#tlv">🏙️ תל אביב</a><span class="nav-sep">|</span>
+  <a href="#office">🏢 משרד</a><span class="nav-sep">|</span>
+  <a href="#food">🍽️ אוכל</a><span class="nav-sep">|</span>
+  <a href="#faq">❓ שאלות</a><span class="nav-sep">|</span>
+  <a href="#contact" class="cta-nav">📩 השאר פרטים</a>
+</nav>
+
+<section class="hero" id="top">
+  <img class="hero-logo" src="images/logo_wide.gif" alt="BeerBazaar">
+  <div class="hero-tagline">ימי גיבוש · סדנאות · קולנריה · בירה בוטיק</div>
+  <h1 class="hero-title">לא יום גיבוש.<br><em>חוויה שזוכרים.</em></h1>
+  <p class="hero-sub">דוכיפת הפקות מבית בירבזאר</p>
+  <div class="badges">
+    <span class="badge">✓ כשר</span>
+    <span class="badge">✓ 15–400 איש</span>
+    <span class="badge">✓ One Stop Shop</span>
+    <span class="badge">✓ כחול לבן — מבשלה ציונית — מלואמניקים</span>
+    <span class="badge">תתנו באהבה — זה תמיד חוזר חזרה 💛</span>
+  </div>
+</section>
+
+<div class="vid-wrap fi">
+  <video autoplay loop muted playsinline><source src="videos/video1.mp4" type="video/mp4"></video>
+  <button class="vid-sound" onclick="toggleSound(this)">🔇</button>
+</div>
+
+<section class="section" id="kfar">
+  <div class="sec-header">
+    <div class="sec-location">🏭 כפר דניאל ויער בן שמן</div>
+    <h2 class="sec-title">ימי גיבוש במבשלה</h2>
+    <p class="sec-sub">7 דקות מנתב"ג · חוץ ופנים · כל גודל קבוצה</p>
+  </div>
+  <div class="sec-divider"></div>
+  <div class="grid">
+    <div class="card fi"><div class="card-img"><img src="images/odtvip.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">למי קראת דודהש'ך</div><div class="card-desc">פעילות גיבוש ODT ברמת VIP עם משחקי חשיבה ענקיים ביער בן שמן + ארוחת צהריים + הכרות עם עולם הבירה/חתול שמן</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 20–250</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/beer_show.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">הכרות עם עולם הבירה + ארוחה</div><div class="card-desc">מופע הומוריסטי עם 12 סוגי בירות מהחבית + ארוחת צהריים</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 20+</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/fat_cat.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חתול שמן + ארוחה</div><div class="card-desc">כל שולחן מבשל בירה בעצמו — סדנת הבישול המובילה בישראל</div><div class="meta"><span class="pill">⏱ 3 שע'</span><span class="pill">👥 20+</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/nav_forest.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">ניווט משימות ביער</div><div class="card-desc">מחפשים את הדודה — ניווט סלולרי + ארוחה + סדנת בירה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 35–400</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/jeep.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">טיול ג'יפים</div><div class="card-desc">שיירת ג'יפים ביער עם נקודות תצפית ומשימות — אקסטרים בקטנה</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 14–400</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/beerton.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">בירתון</div><div class="card-desc">תחרויות ומשימות אוקטוברפסט בין השולחנות — ODT מגבש ומצחיק</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 25–80</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/motor.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">כלים מוטוריים</div><div class="card-desc">איזי ראידרים ורנג'רים בנהיגה עצמית בדרכי עפר ביער בן שמן</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 עד 60</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/paint_kfar.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת ציור הנסיך הקטן</div><div class="card-desc">כל משתתף יוצר ציור קנבאס משלו — יוצאים עם יצירה הביתה</div><div class="meta"><span class="pill">⏱ 2 שע'</span><span class="pill">👥 25+</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/beerchef.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">Beer Chef Challenge 🍻🔥</div><div class="card-desc">מבשלים אוכל עם בירה ומתחרים — מסטר שף פוגש מבשלת בירה</div><div class="meta"><span class="pill">⏱ 3.5–4 שע'</span><span class="pill">👥 65+</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/heroes.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">יום תרומה לגיבורי על</div><div class="card-desc">יום חוויתי ומשמעותי — מתחיל בחווה חקלאית וממשיך במבשלה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/poker.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת בלקג'ק</div><div class="card-desc">פוקר, קלפים ואסטרטגיה — חוויה מלאה ומשחק חברתי מלא אדרנלין</div><div class="meta"><span class="pill">⏱ 3–5 שע'</span><span class="pill">👥 50–90</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/coffee.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת קפה מקצועית</div><div class="card-desc">חוויה יוקרתית עם הקפה הטוב בישראל — קאפינג, זנים וסודות הקלייה</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/wood.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סדנת הכנת מוצרים מעץ</div><div class="card-desc">שרפרפים, מדפים, מארזי בירה — יוצרים ביחד ולוקחים הביתה</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–180</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/frayer.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">למי קראת פראייר</div><div class="card-desc">עסקאות סיבוביות, דילים סודיים ומשא ומתן — תחרות אסטרטגית</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 40–180</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/music.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">מופעים מוזיקליים</div><div class="card-desc">יאסו — מופע יווני ישראלי, מעגל מתופפים, מוסיקת עולם ועוד</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 35–60</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/race.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">המרוץ למיליארד פחיות 🔥</div><div class="card-desc">מגה פרמיום — ג'יפים, משימות, ניווט, סדנאות ואוכל ביום אחד</div><div class="meta"><span class="pill">⏱ 4–7 שע'</span><span class="pill">👥 35–200</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/pool.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">The BeerBazaar Pool Party 🏊</div><div class="card-desc">יום כיף משולב בריכה ומגוון פעילויות בהתאמה אישית</div><div class="meta"><span class="pill">⏱ משתנה</span><span class="pill">👥 100–300</span></div></div></div>
+  </div>
+
+  <div class="vid-wrap fi" style="margin-top:16px;">
+    <video autoplay loop muted playsinline><source src="videos/video2.mp4" type="video/mp4"></video>
+    <button class="vid-sound" onclick="toggleSound(this)">🔇</button>
+  </div>
+
+  <div class="sec-label-sm">🎁 חבילות לדוגמה</div>
+  <div class="packages">
+    <div class="pkg-card fi">
+      <div class="pkg-name">חבילת גלאגר</div>
+      <div class="pkg-desc">09:45 הגעה ליער בן שמן ואפשרות לפריסת בוקר
+10:30 פעילות משחק ניווט משימות מחפשים את הדודה
+12:15 נסיעה קצרה למבשלה מינגלינג עם בירה קרה
+12:45 חצי עושים הכרות עם עולם הבירה וחצי עושים סדנת בירתון ומתחלפים
+15:00 ארוחת צהריים שולחן שוק VIP או מלך הבסטה
+15:30 סיום משוער ונסיעה הביתה עם אפשרות למארז מתנה</div>
+      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 45–160</span></div>
+    </div>
+    <div class="pkg-card fi">
+      <div class="pkg-name">חבילת ויטני</div>
+      <div class="pkg-desc">09:45 הגעה למבשלה לפריסת בוקר והתארגנות
+10:30 חצי עושים סדנת חתול שמן וחצי עושים סדנת ציור
+12:30 שולחן שוק VIP
+13:30 חצי עושים סדנת בירתון וחצי עושים טיול ג'יפים של שעה
+15:30 סיום משוער ונסיעה הביתה עם אפשרות למארז מתנה</div>
+      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 45–160</span></div>
+    </div>
+    <div class="pkg-card fi">
+      <div class="pkg-name">חבילת שאגת החתול</div>
+      <div class="pkg-desc">09:45 הגעה ליער לפריסת בוקר והתארגנות
+10:30 יציאה למשחק טיול ג'יפים עם משימות
+12:30 נסיעה קצרה למבשלה מינגלינג עם בירה קרה
+13:00 חצי עושים סדנת בירתון וחצי עושים הכרות עם עולם הבירה
+15:00 ארוחת שולחן שוק VIP
+16:00 סיום משוער ונסיעה הביתה עם אפשרות למארז מתנה</div>
+      <div class="pkg-meta"><span class="pill">⏱ 6 שע'</span><span class="pill">👥 45–160</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-banner fi">
+  <div class="sep-banner-text">רק פתחנו את הפחית 🍺<br><span>יש לנו עוד ארסנל שלם של פעילויות — תתקשרו ונחשוב ביחד</span></div>
+</div>
+
+<section class="section" id="tlv">
+  <div class="sec-header">
+    <div class="sec-location">🏙️ בירבזאר אורבני</div>
+    <h2 class="sec-title">תל אביב</h2>
+    <p class="sec-sub">שוק הכרמל · כרם התימנים · יפו<br>בקרוב ירושלים וחיפה</p>
+  </div>
+  <div class="sec-divider"></div>
+  <div class="grid">
+    <div class="card fi"><div class="card-img"><img src="images/tlv_tour.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">מטיילים עם הדודה</div><div class="card-desc">סיור קולינרי ותרבותי בכרם התימנים ושוק הכרמל + טעימות בירה</div><div class="meta"><span class="pill">⏱ 4 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_taste.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">טעימות בירה מוגזמות</div><div class="card-desc">מופע הומוריסטי הכרות עם עולם הבירה ובירה חופשית בלב השוק</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_fatcat.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חתול שמן בשוק</div><div class="card-desc">סדנת בישול בירה — גם בסניף שוק הכרמל</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 10–20</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_bar.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">חופשי על הבר</div><div class="card-desc">פיצות, ניגובים, בירה ללא הגבלה — אווירת שוק אותנטית</div><div class="meta"><span class="pill">⏱ 1 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_dance.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">רוקדים עם הדודה</div><div class="card-desc">סדנת אוזניות עם קצב מודרך + טעימות בירה מוגזמות</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 25+</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_photo.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">זיגי צלם אותי</div><div class="card-desc">סדנת צילום סלולרי מודרכת עם משימות יצירתיות והמון הומור</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 15–30</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_paint.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">ציור הנסיך הקטן בשוק</div><div class="card-desc">סדנת ציור קנבאס באווירת שוק — פיצות ובירה בצד</div><div class="meta"><span class="pill">⏱ 2–2.5 שע'</span><span class="pill">👥 10–30</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/tlv_culinary.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">סיור קולינרי</div><div class="card-desc">חיפה, נתניה, תל אביב, ירושלים, רמלה — סיור עם מדריך</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 10–40</span><span class="pill">🔄 ניתן בסבבים</span></div></div></div>
+  </div>
+</section>
+
+<div class="vid-wrap fi">
+  <video autoplay loop muted playsinline><source src="videos/video3.mp4" type="video/mp4"></video>
+  <button class="vid-sound" onclick="toggleSound(this)">🔇</button>
+</div>
+
+<section class="section" id="office">
+  <div class="sec-header">
+    <div class="sec-location">🏢 במשרד / במלון</div>
+    <h2 class="sec-title">אנחנו באים אליכם</h2>
+    <p class="sec-sub">לכל מקום בארץ · עגלות בירה · סדנאות אצלכם</p>
+  </div>
+  <div class="sec-divider"></div>
+  <div class="grid">
+    <div class="card fi"><div class="card-img"><img src="images/beertruck.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">בירטרק ועגלות בירה</div><div class="card-desc">הדרך הטובה לשמח לקוחות באירוע — אנחנו מגיעים לכל מקום</div><div class="meta"><span class="pill">⏱ מותאם</span><span class="pill">👥 100+</span></div></div></div>
+    <div class="card fi"><div class="card-img"><img src="images/mobile_beer.jpg" alt="" loading="lazy"></div><div class="card-body"><div class="card-name">הכרות עם עולם הבירה</div><div class="card-desc">8–10 טעמים מהפחיות המעוצבות שלנו — אצלכם, בכל מקום</div><div class="meta"><span class="pill">⏱ 2.5 שע'</span><span class="pill">👥 30+</span></div></div></div>
+  </div>
+</section>
+
+<section class="section" id="food">
+  <div class="sec-header">
+    <div class="sec-location">🍽️ תפריטי אוכל</div>
+    <h2 class="sec-title">אוכל שזוכרים</h2>
+    <p class="sec-sub">כשר · פתרונות לכל כשרות · טבעוני · צמחוני · גלוטן</p>
+  </div>
+  <div class="sec-divider"></div>
+  <div class="food-grid">
+    <div class="food-card fi"><img src="images/melech.jpg" alt="" loading="lazy"><div class="food-overlay"><div class="food-name">מלך הבסטה</div><div class="food-sub">3 בשרים, סלטים, פחמימות מנחמות, קינוח</div></div></div>
+    <div class="food-card fi"><img src="images/nasich.jpg" alt="" loading="lazy"><div class="food-overlay"><div class="food-name">נסיך המנגל</div><div class="food-sub">5 סוגי בשר · BBQ VIP</div></div></div>
+    <div class="food-card fi"><img src="images/birbazar_meat.jpg" alt="" loading="lazy"><div class="food-overlay"><div class="food-name">מלך השוק / בירבשר</div><div class="food-sub">חווית בשרים מטורפת</div></div></div>
+    <div class="food-card fi"><img src="images/shuk.jpg" alt="" loading="lazy"><div class="food-overlay"><div class="food-name">שולחן שוק VIP</div><div class="food-sub">מטוגנים, ממולאים ומלא בשרים</div></div></div>
+    <div class="food-card fi"><img src="images/pizza.jpg" alt="" loading="lazy"><div class="food-overlay"><div class="food-name">פיצות מהטאבון</div><div class="food-sub">פיצה בוטיק טרייה · ללא הגבלה · לפי הטעם שלכם</div></div></div>
+    <div class="food-card fi"><img src="images/breakfast.jpg" alt="" loading="lazy"><div class="food-overlay"><div class="food-name">Birbazar Light Breakfast</div><div class="food-sub">קרואסונים, כריכים, מיני סביח, מיני פירקסה ועוד</div></div></div>
+    <div class="food-card fi"><img src="images/more_options.jpg" alt="" loading="lazy"><div class="food-overlay"><div class="food-name">יש עוד מלאאאא אפשרויות 🍺</div><div class="food-sub">לא הספיק לכם? יש עוד מלא אפשרויות — תתקשרו!</div></div></div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="sec-divider" style="margin-bottom:24px;"></div>
+  <h2 class="faq-title">אולי שאלת את עצמך? 🤔</h2>
+  <div class="faq-list">
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">אנחנו קבוצה גדולה – 200+ איש, אפשר?</span><span class="faq-icon">+</span></div><div class="faq-a">בהחלט! אנחנו עובדים עם קבוצות של 15 עד 400 אנשים. יש לנו 2 מרחבים מרווחים בחוץ ובפנים, פתרונות לגיבוש עם ריבוי פעילויות במקביל.</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">יש בצוות שלנו אנשים שומרי כשרות, טבעונים וצליאק?</span><span class="faq-icon">+</span></div><div class="faq-a">כן! אנחנו מתאימים לכולם. פתרונות לטבעונים, צמחונים, צליאק, כשרות מהודרת. ואפילו מוצרים ללא אלכוהול לגברים בהריון.</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">מה קורה אם מזג האוויר לא טוב?</span><span class="faq-icon">+</span></div><div class="faq-a">אין בעיה! יש לנו מרחבים מקורים גדולים ומאובזרים. בין אם בפנים או בחוץ, יש לנו פתרונות לכל מזג אוויר. מרחב מוגן במקום!</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">כמה זמן לוקח לארגן?</span><span class="faq-icon">+</span></div><div class="faq-a">השאירו פרטים ותוך שעתיים הצעה מלאה אצלכם. אנחנו מכינים הכל כדי שאתם לא תצטרכו לדאוג לשום פרט.</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">אנחנו חברה עם מגוון רצונות — האם יש מענה לכולם?</span><span class="faq-icon">+</span></div><div class="faq-a">כן! מגוון רב של פעילויות — מסדנאות בירה, ODT ביער, ג'יפים, ציור, סדנאות קולינריות ועוד. הכל אפשר לשלב ולהתאים לצוות שלכם.</div></div>
+    <div class="faq-item fi" onclick="toggleFaq(this)"><div class="faq-q"><span class="faq-q-text">זה רק כפר דניאל או שיכולים לבוא אלינו?</span><span class="faq-icon">+</span></div><div class="faq-a">יש לנו בירבזאר אורבני בתל אביב ועוד ערים. בנוסף אנחנו גם באים אליכם לכל מקום — ואפילו להפקות אירועים גדולות בכל רחבי הארץ.</div></div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="sec-divider" style="margin-bottom:24px;"></div>
+  <img src="images/logo_square.jpg" alt="BeerBazaar" style="width:80px;margin:0 auto 16px;display:block;border-radius:10px;">
+  <h2 class="cta-title">למה אתם מחכים צרו קשר 🍺</h2>
+  <p class="cta-sub">נחזור אליכם תוך 2 כוסות בירה עם הצעה ביד!</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/972548822858?text=היי סהר, ראיתי את הקטלוג — אשמח לשמוע פרטים 🍺" class="cta-btn cta-wa" target="_blank">💬 שלחו וואטסאפ עכשיו</a>
+    <a href="tel:+972548822858" class="cta-btn cta-tel">📞 התקשרו</a>
+    <a href="mailto:marketing@beerbazaar.co.il" class="cta-btn cta-mail">✉️ מייל</a>
+  </div>
+</section>
+
+<footer>
+  <img src="images/logo_square.jpg" alt="BeerBazaar" class="footer-logo">
+  <div class="footer-main">BeerBazaar Center</div>
+  <div class="footer-row">כפר דניאל · מחלף בן שמן · 7 דקות מנתב"ג</div>
+  <div class="footer-row"><a href="tel:+972548822858">054-882-2858</a> · <a href="mailto:marketing@beerbazaar.co.il">marketing@beerbazaar.co.il</a></div>
+  <div class="footer-access">שירותי נכים · חניה נכים · שמע בדלפק · מושבים נגישים · כניסה מוגשת<br>רכז נגישות: שגיב מאור · <a href="tel:+97223724471">02-372-4471</a></div>
+  <div class="footer-copy">© BeerBazaar 2025. כל הזכויות שמורות.</div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('v'),i*50);io.unobserve(el.target);}});},{threshold:0.06});
+document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+const secs=document.querySelectorAll('section[id]');
+const links=document.querySelectorAll('.nav a[href^="#"]');
+window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-70)c=s.id;});links.forEach(a=>{const m=a.getAttribute('href')==='#'+c&&!a.classList.contains('cta-nav');a.style.color=m?'var(--orange)':'';a.style.borderBottomColor=m?'var(--orange)':'transparent';});});
+function toggleSound(btn){const v=btn.previousElementSibling;v.muted=!v.muted;btn.textContent=v.muted?'🔇':'🔊';}
+function toggleFaq(item){document.querySelectorAll('.faq-item.open').forEach(i=>{if(i!==item)i.classList.remove('open');});item.classList.toggle('open');}
+</script>
+</body>
+</html>
